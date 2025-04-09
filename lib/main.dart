@@ -51,8 +51,8 @@ class _MainAppState extends State<MainApp> {
                   color: color1,
                   child: Center(
                     child: Text('$counter1'),
-                  ) 
-                ),
+                ) 
+               ),
               ),
               InkWell(
                 onTap: () {
@@ -69,8 +69,8 @@ class _MainAppState extends State<MainApp> {
                   color: color2,
                   child: Center(
                     child: Text('$counter2'),
-                  ) 
-                ),
+                ) 
+               ),
               ),
               InkWell(
                 onTap: () {
@@ -87,8 +87,8 @@ class _MainAppState extends State<MainApp> {
                   color: color3,
                   child: Center(
                     child: Text('$counter3'),
-                  ) 
-                ),
+                ) 
+               ),
               ),
               InkWell(
                 onTap: () {
@@ -96,21 +96,20 @@ class _MainAppState extends State<MainApp> {
                   counter4++;
                   if (counter4 == 5) {
                     color4 = Colors.green;
-                  }
-                 }
-                );
-               },
+              }
+             }
+            );
+           },
                 child: Container(
                   height: 50,
                   color: color4,
                   child: Center(
                     child: Text('$counter4'),
-                  ) 
-                ),
-              ),
-
-            ],
-          )
+          ) 
+         ),
+        ),
+       ],
+      )
      ),
     )
    ),
