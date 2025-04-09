@@ -23,9 +23,10 @@ class _MainAppState extends State<MainApp> {
   Color color3 = Colors.lightBlue;
   Color color4 = Colors.lightBlueAccent;
   
-  // Errors when trying to extract InkWell instead of copying it 4 times:
-  // "Reference to an enclosing class method cannot be extracted."
-  // "Write to 'counter1' cannot be extracted."
+  // // // Errors when trying to extract InkWell instead of copying it 4 times:
+  // // // "Reference to an enclosing class method cannot be extracted."
+  // // // "Write to 'counter1' cannot be extracted."
+  // ^ packed the InkWell(s) in Method(s), nicht optimal for automation ^ //
 
   @override
   Widget build(BuildContext context) {
@@ -36,78 +37,10 @@ class _MainAppState extends State<MainApp> {
           padding: const EdgeInsets.all(4),
           child: ListView(
             children: [
-              InkWell(
-                onTap: () {
-                  setState(() {
-                  counter1++;
-                  if (counter1 == 5) {
-                    color1 = Colors.green;
-                  }
-                 }
-                );
-               },
-                child: Container(
-                  height: 50,
-                  color: color1,
-                  child: Center(
-                    child: Text('$counter1'),
-                ) 
-               ),
-              ),
-              InkWell(
-                onTap: () {
-                  setState(() {
-                  counter2++;
-                  if (counter2 == 5) {
-                    color2 = Colors.green;
-                  }
-                 }
-                );
-               },
-                child: Container(
-                  height: 50,
-                  color: color2,
-                  child: Center(
-                    child: Text('$counter2'),
-                ) 
-               ),
-              ),
-              InkWell(
-                onTap: () {
-                  setState(() {
-                  counter3++;
-                  if (counter3 == 5) {
-                    color3 = Colors.green;
-                  }
-                 }
-                );
-               },
-                child: Container(
-                  height: 50,
-                  color: color3,
-                  child: Center(
-                    child: Text('$counter3'),
-                ) 
-               ),
-              ),
-              InkWell(
-                onTap: () {
-                  setState(() {
-                  counter4++;
-                  if (counter4 == 5) {
-                    color4 = Colors.green;
-              }
-             }
-            );
-           },
-                child: Container(
-                  height: 50,
-                  color: color4,
-                  child: Center(
-                    child: Text('$counter4'),
-          ) 
-         ),
-        ),
+              counterContainer1(),
+              counterContainer2(),
+              counterContainer3(),
+              counterContainer4(),
        ],
       )
      ),
@@ -115,4 +48,94 @@ class _MainAppState extends State<MainApp> {
    ),
   );
  }
+
+
+/////////////
+
+
+  InkWell counterContainer1() {
+    return InkWell(
+              onTap: () {
+                setState(() {
+                counter1++;
+                if (counter1 == 5) {
+                  color1 = Colors.green;
+                }
+               }
+              );
+             },
+              child: Container(
+                height: 50,
+                color: color1,
+                child: Center(
+                  child: Text('$counter1'),
+              ) 
+             ),
+            );
+  }
+
+  InkWell counterContainer2() {
+    return InkWell(
+              onTap: () {
+                setState(() {
+                counter2++;
+                if (counter2 == 5) {
+                  color2 = Colors.green;
+                }
+               }
+              );
+             },
+              child: Container(
+                height: 50,
+                color: color2,
+                child: Center(
+                  child: Text('$counter2'),
+              ) 
+             ),
+            );
+  }
+
+  InkWell counterContainer3() {
+    return InkWell(
+              onTap: () {
+                setState(() {
+                counter3++;
+                if (counter3 == 5) {
+                  color3 = Colors.green;
+                }
+               }
+              );
+             },
+              child: Container(
+                height: 50,
+                color: color3,
+                child: Center(
+                  child: Text('$counter3'),
+              ) 
+             ),
+            );
+  }
+
+
+
+  InkWell counterContainer4() {
+    return InkWell(
+              onTap: () {
+                setState(() {
+                counter4++;
+                if (counter4 == 5) {
+                  color4 = Colors.green;
+            }
+           }
+          );
+         },
+              child: Container(
+                height: 50,
+                color: color4,
+                child: Center(
+                  child: Text('$counter4'),
+        ) 
+       ),
+      );
+  }
 }
